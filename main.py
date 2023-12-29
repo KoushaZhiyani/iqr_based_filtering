@@ -25,7 +25,6 @@ def creat_address(address):
 # Variable for filename 
     word = ""
 # Variable for file type
-
     type = ""
     for i in address:
         word += i
