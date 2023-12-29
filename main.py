@@ -1,6 +1,10 @@
+# Finding outlier data by iqr based filtering
+
+
+
 import pandas as pd
 
-
+# Find the first and third quartiles and the distance between them 
 def clean_data(i):
     new_data = []
     q1 = data[i].quantile(0.25)
@@ -16,21 +20,25 @@ def clean_data(i):
     print("number of outliers :", z)
     return new_data
 
-
+# Create a new file to save the changes
 def creat_address(address):
+# Variable for filename 
     word = ""
+# Variable for file type
+
     type = ""
     for i in address:
         word += i
         if i == "\\":
             word = ""
-    # print(word)
+    
     for i in word:
         if i == ".":
             type = ""
         type += i
-    # print(type)
+# Variable for the name of the copied file
     final_word = (word.replace(type, "") + "_edit.csv")
+# The address of the space where the copied file will be saved
     address = address.replace(word, final_word)
     return final_word, address
 
@@ -40,6 +48,7 @@ columns = []
 while True:
     stats = input("1)start 2)exit!\n")
     if stats == "1":
+# Enter the location where the data file is located
         address = input('address your file:\n')
         data_og = pd.read_csv(address)
         copy_info = creat_address(address)
@@ -47,6 +56,7 @@ while True:
 
         print(data_og.shape)
         while True:
+# The columns you want to find outlier data	 
             sample = input("columns name? \n0)done!\n")
             if sample == "0":
                 break
@@ -70,5 +80,3 @@ while True:
 
             del columns[0]
 
-# a = df.corr()["Selected"]
-# print(a.sort_values())
