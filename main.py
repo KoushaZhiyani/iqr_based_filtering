@@ -14,7 +14,7 @@ def clean_data(i):
     lower_limit = q1 - 1.5 * iqr
     z = 0
     for j in data[i]:
-        if j < (lower_limit or j > upper_limit):
+        if j < lower_limit or j > upper_limit):
             new_data.append(j)
             z += 1
     print("number of outliers :", z)
