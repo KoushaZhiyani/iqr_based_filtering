@@ -22,9 +22,9 @@ def clean_data(i):
 
 # Create a new file to save the changes
 def creat_address(address):
-# Variable for filename 
+    # Variable for filename 
     word = ""
-# Variable for file type
+    # Variable for file type
     type = ""
     for i in address:
         word += i
@@ -35,9 +35,9 @@ def creat_address(address):
         if i == ".":
             type = ""
         type += i
-# Variable for the name of the copied file
+    # Variable for the name of the copied file
     final_word = (word.replace(type, "") + "_edit.csv")
-# The address of the space where the copied file will be saved
+    # The address of the space where the copied file will be saved
     address = address.replace(word, final_word)
     return final_word, address
 
@@ -47,7 +47,7 @@ columns = []
 while True:
     stats = input("1)start 2)exit!\n")
     if stats == "1":
-# Enter the location where the data file is located
+        # Enter the location where the data file is located
         address = input('address your file:\n')
         data_og = pd.read_csv(address)
         copy_info = creat_address(address)
@@ -55,7 +55,7 @@ while True:
 
         print(data_og.shape)
         while True:
-# The columns you want to find outlier data	 
+            # The columns you want to find outlier data	 
             sample = input("columns name? \n0)done!\n")
             if sample == "0":
                 break
