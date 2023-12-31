@@ -1,6 +1,6 @@
 # iqr_based_filtering
 
-Hello
+
 To clean the data and remove outliers data, one of the methods is to use iqr, and no matter what I searched, I did not find a ready-to-use method.
 That's why I implemented this code.
 instructions:
